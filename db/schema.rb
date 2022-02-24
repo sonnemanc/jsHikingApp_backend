@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_210159) do
   end
 
   create_table "hikes", force: :cascade do |t|
+    t.string "name"
     t.string "difficulty"
     t.string "best_season"
     t.string "distance"

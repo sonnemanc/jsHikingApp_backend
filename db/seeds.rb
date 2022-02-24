@@ -10,11 +10,62 @@ Hike.delete_all
 Comment.delete_all
 
 locations = {
-    "..name.." => {
-        :difficulty => x,
-        :distance => x,
-        :best_season => x,
-        :trail_use => x,
-        :notes => x
+    "Bayside trail" => {
+        :difficulty => "Moderately Easy",
+        :distance => "3 miles",
+        :best_season => "All-Year",
+        :trail_use => "Good for kids",
+        :notes => "Easy terrain, well-marked path."
+    },
+    "Batiquitos Lagoon" => {
+        :difficulty => "Easy",
+        :distance => "2.8 miles",
+        :best_season => "All-Year",
+        :trail_use => "Good for kids, dogs allowed",
+        :notes => "Easy terrain, well-marked path."
+    },
+    "Mission Trails Regional Park" => {
+        :difficulty => "Easy to Intermediate",
+        :distance => "Varies",
+        :best_season => "All-Year, October - June for some park areas",
+        :trail_use => "Most trails are dog and kid friendly, some trails for mountain bikers.",
+        :notes => "Consists of many trails, features of the park are mountain biking, rock climbing, as well as day hiking."
+    },
+    "Del Dios Highlands Preserve Trail" => {
+        :difficulty => "Moderately Strenuous",
+        :distance => "2.5 miles",
+        :best_season => "November - May",
+        :trail_use => "Dog Friendly",
+        :notes => "Easy terrain, well-marked path."
+    },
+    "Stonewall Peak Trail" => {
+        :difficulty => "Intermediate",
+        :distance => "4.4 miles",
+        :best_season => "All-Year, may close in winter months if too much snow",
+        :trail_use => "Good for kids",
+        :notes => "Well marked path, $8 day pass required for parking at Ranger station."
+    },
+    "Volcan Mountain Preserve Trail" => {
+        :difficulty => "Intermediate",
+        :distance => "3 miles",
+        :best_season => "October - June",
+        :trail_use => "Good for horseback riding.",
+        :notes => "Well-marked paths, 1,300 elevation gain."
+    },
+    "Miramar Resevoir Loop" => {
+        :difficulty => "Easy",
+        :distance => "4.9 miles",
+        :best_season => "All-Year",
+        :trail_use => "Good for kids, dog friendly",
+        :notes => "Easy terrain, well-marked path. Scattered picnic areas with BBQ pits."
     },
 }
+
+locations.each do |name, location_hash|
+    l = Hike.new
+    l.name = name
+    location_hash.each do |attribute, value|
+        l[attribute] = value
+    end
+    l.save
+end
