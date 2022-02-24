@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Hike.delete_all
+Comment.delete_all
+
+locations = {
+    "..name.." => {
+        :difficulty => x,
+        :distance => x,
+        :best_season => x,
+        :trail_use => x,
+        :notes => x
+    },
+}
