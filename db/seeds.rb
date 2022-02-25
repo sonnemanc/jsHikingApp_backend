@@ -69,3 +69,27 @@ locations.each do |name, location_hash|
     end
     l.save
 end
+
+comments = {
+    "Todd Howard" => {
+        :content => "Gorgeous views all along this hike.",
+        :hike_id => 1
+    },
+    "Mike Bell" => {
+        :content => "My family enjoyed this hike.",
+        :hike_id => 2
+    },
+    "Todd Sweeney" => {
+        :content => "Beautiful place to picnic by the ocean.",
+        :hike_id => 1
+    }
+}
+
+comments.each do |name, comment_hash|
+    c = Comment.new
+    c.user_name = name
+    comment_hash.each do |attribute, value|
+        c[attribute] = value
+    end
+    c.save
+end
