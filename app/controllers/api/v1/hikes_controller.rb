@@ -2,7 +2,8 @@ class Api::V1::HikesController < ApplicationController
 
   def index
     hikes = Hike.all
-    render json: hikes, include: [:comments]
+    #render json: hikes, include: [:comments]
+    render json: HikeSerializer.new(hikes, include: [:comments])
   end
 
   #def create
