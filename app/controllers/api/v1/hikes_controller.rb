@@ -11,6 +11,7 @@ class Api::V1::HikesController < ApplicationController
     hike = Hike.find(params[:hike_id])
     new_comment = hike.comments.build(user_name: params[:user_name], content: params[:content] )
     new_comment.save
+    render json: HikeSerializer.new(hike), status: :accepted
   end
 
 
