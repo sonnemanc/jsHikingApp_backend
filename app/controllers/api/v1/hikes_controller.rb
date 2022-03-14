@@ -14,11 +14,6 @@ class Api::V1::HikesController < ApplicationController
     render json: HikeSerializer.new(hike), status: :accepted
   end
 
-
-  #def create
-    #hikes = Hike.new(hike_params) 
-  #end
-
   private
 
   def hike_params

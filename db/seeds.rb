@@ -80,7 +80,7 @@ comments = {
         :hike_id => 2
     },
     "Todd Sweeney" => {
-        :content => "Beautiful place to picnic by the ocean.",
+        :content => "Beautiful place by the ocean.",
         :hike_id => 1
     }
 }

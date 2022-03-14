@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :hikes
         resources :comments, only: [:new]
+      resources :comments, only: [:index, :destroy]
     end
   end
+
+  
 
 end
